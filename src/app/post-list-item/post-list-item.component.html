@@ -1,17 +1,18 @@
 <li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': loveIts > 0 ,
-                'list-group-item-danger': loveIts < 0
+                'list-group-item-success': post.loveIts > 0 ,
+                'list-group-item-danger': post.loveIts < 0
                 }">
-  <h3 style="float: right; color: #ccc;">{{ created_at | date: 'dd/MM/y à HH:mm' }}</h3>
-  <h2 [ngStyle]="{color: getColor()}">{{ title }}</h2>
-  <div>
-    {{ content }}
-  </div>
-  <div>
-    <button class="btn btn-success" style="margin: 2px;" (click)="addLoveIts()">Love it!</button>
-    <button class="btn btn-danger" style="margin: 2px;" (click)="decreaseLoveIts()">Don't love it!</button>
-  </div>
-  <div>
-    Love it : {{ loveIts }}
-  </div>
+    <h3 style="float: right; color: #ccc;">{{ post.created_at | date: 'dd/MM/y à HH:mm' }}</h3>
+    <h2 [ngStyle]="{color: getColor()}">{{ post.title }}</h2>
+    <div style="white-space: pre-wrap;">
+        {{ post.content }}
+    </div>
+    <div>
+        <button class="btn btn-success" style="margin: 2px;" (click)="addLoveIts()">Love it!</button>
+        <button class="btn btn-danger" style="margin: 2px;" (click)="decreaseLoveIts()">Don't love it!</button>
+        <button class="btn btn-danger pull-right" (click)="onDeletePost()">Supprimer</button>
+    </div>
+    <div>
+        Love it : {{ post.loveIts }}
+    </div>
 </li>
