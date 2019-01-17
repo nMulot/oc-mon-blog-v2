@@ -7,31 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-    @Input() title: string;
-    @Input() content: string;
-    @Input() loveIts: number;
-    @Input() created_at: Date;
+    @Input() posts: any[];
 
     constructor() { }
 
     ngOnInit() {
     }
-
-    getColor() {
-        if ( this.loveIts > 0 ) {
-            return 'green';
-        } else if ( this.loveIts < 0 ) {
-            return 'red';
-        }
-    }
-
-    addLoveIts() {
-        this.loveIts++;
-    }
-
-    decreaseLoveIts() {
-        this.loveIts--;
-    }
-
 
 }
