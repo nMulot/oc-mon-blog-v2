@@ -26,15 +26,11 @@ export class PostListItemComponent implements OnInit {
     }
 
     addLoveIts() {
-        this.post.loveIts++;
-        this.postsService.savePosts();
-        this.postsService.emitPosts();
+        this.postsService.addLoveIts(this.post);
     }
 
     decreaseLoveIts() {
-        this.post.loveIts--;
-        this.postsService.savePosts();
-        this.postsService.emitPosts();
+        this.postsService.decreaseLoveIts(this.post);
     }
 
     onDeletePost() {
